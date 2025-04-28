@@ -21,8 +21,8 @@ async fn setup_environment() {
         ("NEZHA_SERVER", "nz.abc.com"),
         ("NEZHA_PORT", "5555"),
         ("NEZHA_KEY", ""),
-        ("ARGO_DOMAIN", "7shuttle.jick6oij.dpdns.org"),  // argo固定隧道也可在scrects中添加环境变量
-        ("ARGO_AUTH", "eyJhIjoiNDI1NDJkMWMzYjIyN2U5M2I4YzRhYjQ1MGIwMTY1NDkiLCJ0IjoiMzMxYTBjMjAtNjQwNS00MDc1LTgzMjYtMWI2ZGJmOGM2ZTg0IiwicyI6IlpEUTJNMlkzWldNdFkyWXhaQzAwT1RFMExXRmxNalF0TW1SbU1qazVOR1UxTWpZMiJ9"),    // argo密钥，留空将使用临时隧道
+        ("ARGO_DOMAIN", "shuttle7.delta.yn.to"),  // argo固定隧道也可在scrects中添加环境变量
+        ("ARGO_AUTH", "eyJhIjoiNDI1NDJkMWMzYjIyN2U5M2I4YzRhYjQ1MGIwMTY1NDkiLCJ0IjoiOTI0NzI2YTMtNTljNC00MTJkLWI3NmItMjY0OTAzMzNkNDE3IiwicyI6Ik0ySXhZV1ZtT1RJdE16QmtOaTAwTURoakxUZzVNMkl0WlRFNVlUZzNNakJoTlRrMiJ9"),    // argo密钥，留空将使用临时隧道
         ("CFIP", "www.visa.com.tw"),
         ("CFPORT", "443"),
         ("NAME", "shuttle"),
