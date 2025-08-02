@@ -14,21 +14,20 @@ async fn hello_world() -> &'static str {
     "Hello, world!"
 }
 
-async fn setup_environment() {
-
+async fn setup_environment() { 
     let env_vars = [
         ("UUID", "9a6eee78-f90e-49aa-8362-bf9816fc38b1"),
-        ("NEZHA_SERVER", ""),
-        ("NEZHA_PORT", ""),
-        ("NEZHA_KEY", ""),
-        ("ARGO_DOMAIN", "shuttle7.delta.yn.to"),  // argo固定隧道也可在scrects中添加环境变量
-        ("ARGO_AUTH", "eyJhIjoiNDI1NDJkMWMzYjIyN2U5M2I4YzRhYjQ1MGIwMTY1NDkiLCJ0IjoiOTI0NzI2YTMtNTljNC00MTJkLWI3NmItMjY0OTAzMzNkNDE3IiwicyI6Ik0ySXhZV1ZtT1RJdE16QmtOaTAwTURoakxUZzVNMkl0WlRFNVlUZzNNakJoTlRrMiJ9"),    // argo密钥，留空将使用临时隧道
-        ("CFIP", "www.visa.com.tw"),
-        ("CFPORT", "443"),
-        ("NAME", "shuttle"),
-        ("FILE_PATH", "./tmp"),
-        ("ARGO_PORT", "8080"), // argo端口,
-        ("SUB_PATH", "sub"), // 订阅路径
+        ("NEZHA_SERVER", ""),   // 哪吒v1填写形式：nezha.xxx.com:8008   // 哪吒v0填写形式：nezha.xxx.com
+        ("NEZHA_PORT", ""),     // 哪吒v1请留空此变量，哪吒v0的agent端口
+        ("NEZHA_KEY", ""),      // 哪吒v1的NZ-CLIENT_SECRET或哪吒v0的agent密钥
+        ("ARGO_DOMAIN", "shuttle7.delta.yn.to"),    // argo固定隧道域名，留空将使用临时隧道
+        ("ARGO_AUTH", "eyJhIjoiNDI1NDJkMWMzYjIyN2U5M2I4YzRhYjQ1MGIwMTY1NDkiLCJ0IjoiOTI0NzI2YTMtNTljNC00MTJkLWI3NmItMjY0OTAzMzNkNDE3IiwicyI6Ik0ySXhZV1ZtT1RJdE16QmtOaTAwTURoakxUZzVNMkl0WlRFNVlUZzNNakJoTlRrMiJ9"),      // argo固定隧道密钥，json或token,留空将使用临时隧道,
+        ("ARGO_PORT", "8080"),  // argo端口，使用固定隧道token，需要在cloudflare后台也设置端口为8080
+        ("CFIP", "time.is"),    // 优选域名或优选ip
+        ("CFPORT", "443"),      // 优选域名或优选ip对应的端口
+        ("NAME", "Shuttle"),    // 节点名称
+        ("FILE_PATH", "./tmp"), // 运行目录，保持不变
+        ("SUB_PATH", "sub"),    // 获取节点订阅路径，分配的域名/sub
     ];
 
     for (key, default_value) in env_vars {
@@ -500,4 +499,3 @@ async fn main() -> shuttle_axum::ShuttleAxum {
 
     Ok(router.into())
 }
-
